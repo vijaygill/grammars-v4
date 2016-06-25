@@ -5,6 +5,7 @@ Copyright (c) 2015-2016, Ivan Kochurkin (kvanttt@gmail.com), Positive Technologi
 Copyright (c) 2016, Scott Ure (scott@redstormsoftware.com).
 Copyright (c) 2016, Rui Zhang (ruizhang.ccs@gmail.com).
 Copyright (c) 2016, Marcus Henriksson (kuseman80@gmail.com).
+Copyright (c) 2016, Vijay Gill (vijay.gill@hotmail.com) GillSoft Limited.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

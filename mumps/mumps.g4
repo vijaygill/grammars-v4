@@ -479,7 +479,7 @@ IDENTIFIER
 
 
 STRING_LITERAL
-   : '\"' ('\"\"' | ~ ('\"'))* '\"'
+   : '"' ('""' | ~'"')* '"'
    ;
 
 
@@ -629,12 +629,12 @@ fragment Z
 
 
 COMMENT
-   : ';' ~ [\r\n]* -> skip
+   : ';' ~[\r\n]* -> skip
    ;
 
 
 CR
-   : '\n'
+   : '\r'? '\n'
    ;
 
 

@@ -24,6 +24,10 @@ options {
     superClass=PlSqlBaseLexer;
 }
 
+@lexer::postinclude {
+#include <PlSqlBaseLexer.h>
+}
+
 ABORT:                        'ABORT';
 ABS:                          'ABS';
 ACCESS:                       'ACCESS';
@@ -107,6 +111,7 @@ AUTHID:                       'AUTHID';
 AUTHORIZATION:                'AUTHORIZATION';
 AUTOALLOCATE:                 'AUTOALLOCATE';
 AUTO:                         'AUTO';
+AUTOBACKUP:                   'AUTOBACKUP';
 AUTOEXTEND:                   'AUTOEXTEND';
 AUTO_LOGIN:                   'AUTO_LOGIN';
 AUTOMATIC:                    'AUTOMATIC';
@@ -116,6 +121,7 @@ AVAILABILITY:                 'AVAILABILITY';
 AVRO:                         'AVRO';
 BACKGROUND:                   'BACKGROUND';
 BACKUP:                       'BACKUP';
+BACKUPSET:                    'BACKUPSET';
 BASIC:                        'BASIC';
 BASICFILE:                    'BASICFILE';
 BATCH:                        'BATCH';
@@ -194,6 +200,7 @@ CERTIFICATE:                  'CERTIFICATE';
 CFILE:                        'CFILE';
 CHAINED:                      'CHAINED';
 CHANGE:                       'CHANGE';
+CHANGETRACKING:               'CHANGETRACKING';
 CHANGE_DUPKEY_ERROR_INDEX:    'CHANGE_DUPKEY_ERROR_INDEX';
 CHARACTER:                    'CHARACTER';
 CHAR:                         'CHAR';
@@ -340,6 +347,7 @@ DATABASE:                     'DATABASE';
 DATA:                         'DATA';
 DATAFILE:                     'DATAFILE';
 DATAFILES:                    'DATAFILES';
+DATAGUARDCONFIG:              'DATAGUARDCONFIG';
 DATAMOVEMENT:                 'DATAMOVEMENT';
 DATAOBJNO:                    'DATAOBJNO';
 DATAOBJ_TO_MAT_PARTITION:     'DATAOBJ_TO_MAT_PARTITION';
@@ -412,6 +420,7 @@ DISCARD:                      'DISCARD';
 DISCONNECT:                   'DISCONNECT';
 DISK:                         'DISK';
 DISKGROUP:                    'DISKGROUP';
+DISKGROUP_PLUS:               '\'+ DISKGROUP';
 DISKS:                        'DISKS';
 DISMOUNT:                     'DISMOUNT';
 DISTINCT:                     'DISTINCT';
@@ -434,6 +443,7 @@ DROP_GROUP:                   'DROP_GROUP';
 DSINTERVAL_UNCONSTRAINED:     'DSINTERVAL_UNCONSTRAINED';
 DST_UPGRADE_INSERT_CONV:      'DST_UPGRADE_INSERT_CONV';
 DUMP:                         'DUMP';
+DUMPSET:                      'DUMPSET';
 DUPLICATE:                    'DUPLICATE';
 DV:                           'DV';
 DYNAMIC:                      'DYNAMIC';
@@ -1114,7 +1124,7 @@ NO_XML_QUERY_REWRITE:         'NO_XML_QUERY_REWRITE';
 NO_ZONEMAP:                   'NO_ZONEMAP';
 NTH_VALUE:                    'NTH_VALUE';
 NULLIF:                       'NULLIF';
-NULL:                         'NULL';
+NULL_:                        'NULL';
 NULLS:                        'NULLS';
 NUMBER:                       'NUMBER';
 NUMERIC:                      'NUMERIC';
@@ -1143,6 +1153,7 @@ OLTP:                         'OLTP';
 OMIT:                         'OMIT';
 ONE:                          'ONE';
 ONLINE:                       'ONLINE';
+ONLINELOG:                    'ONLINELOG';
 ONLY:                         'ONLY';
 ON:                           'ON';
 OPAQUE:                       'OPAQUE';
@@ -1212,6 +1223,7 @@ PACKAGES:                     'PACKAGES';
 PARALLEL_ENABLE:              'PARALLEL_ENABLE';
 PARALLEL_INDEX:               'PARALLEL_INDEX';
 PARALLEL:                     'PARALLEL';
+PARAMETERFILE:                'PARAMETERFILE';
 PARAMETERS:                   'PARAMETERS';
 PARAM:                        'PARAM';
 PARENT:                       'PARENT';
@@ -1513,6 +1525,7 @@ SEMI_TO_INNER:                'SEMI_TO_INNER';
 SEQUENCED:                    'SEQUENCED';
 SEQUENCE:                     'SEQUENCE';
 SEQUENTIAL:                   'SEQUENTIAL';
+SEQ:                          'SEQ';
 SERIALIZABLE:                 'SERIALIZABLE';
 SERIALLY_REUSABLE:            'SERIALLY_REUSABLE';
 SERIAL:                       'SERIAL';
@@ -2181,6 +2194,7 @@ XML:                          'XML';
 XPATHTABLE:                   'XPATHTABLE';
 XS_SYS_CONTEXT:               'XS_SYS_CONTEXT';
 XS:                           'XS';
+XTRANSPORT:                   'XTRANSPORT';
 YEARS:                        'YEARS';
 YEAR:                         'YEAR';
 YES:                          'YES';
@@ -2266,7 +2280,7 @@ APPROXIMATE_NUM_LIT: FLOAT_FRAGMENT ('E' ('+'|'-')? (FLOAT_FRAGMENT | [0-9]+))? 
 
 // Rule #--- <CHAR_STRING> is a base for Rule #065 <char_string_lit> , it incorporates <character_representation>
 // and a superfluous subtoken typecasting of the "QUOTE"
-CHAR_STRING: '\'' (~('\'' | '\r' | '\n') | '\'' '\'' | NEWLINE)* '\'';
+CHAR_STRING: '\''  (~('\'' | '\r' | '\n') | '\'' '\'' | NEWLINE)* '\'';
 
 // Perl-style quoted string, see Oracle SQL reference, chapter String Literals
 CHAR_STRING_PERL    : 'Q' ( QS_ANGLE | QS_BRACE | QS_BRACK | QS_PAREN) -> type(CHAR_STRING);

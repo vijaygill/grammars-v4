@@ -107,7 +107,7 @@ DecimalLiteral:                 DecimalIntegerLiteral '.' [0-9]* ExponentPart?
 /// Numeric Literals
 
 HexIntegerLiteral:              '0' [xX] HexDigit+;
-OctalIntegerLiteral:            '0' [0-7]+ {!this.IsSrictMode()}?;
+OctalIntegerLiteral:            '0' [0-7]+ {!this.IsStrictMode()}?;
 OctalIntegerLiteral2:           '0' [oO] [0-7]+;
 BinaryIntegerLiteral:           '0' [bB] [01]+;
 
@@ -139,6 +139,8 @@ Throw:                          'throw';
 Delete:                         'delete';
 In:                             'in';
 Try:                            'try';
+As:                             'as';
+From:                           'from';
 
 /// Future Reserved Words
 
@@ -153,15 +155,15 @@ Import:                         'import';
 /// The following tokens are also considered to be FutureReservedWords 
 /// when parsing strict mode
 
-Implements:                     'implements' {this.IsSrictMode()}?;
-Let:                            'let' {this.IsSrictMode()}?;
-Private:                        'private' {this.IsSrictMode()}?;
-Public:                         'public' {this.IsSrictMode()}?;
-Interface:                      'interface' {this.IsSrictMode()}?;
-Package:                        'package' {this.IsSrictMode()}?;
-Protected:                      'protected' {this.IsSrictMode()}?;
-Static:                         'static' {this.IsSrictMode()}?;
-Yield:                          'yield' {this.IsSrictMode()}?;
+Implements:                     'implements' {this.IsStrictMode()}?;
+Let:                            'let' {this.IsStrictMode()}?;
+Private:                        'private' {this.IsStrictMode()}?;
+Public:                         'public' {this.IsStrictMode()}?;
+Interface:                      'interface' {this.IsStrictMode()}?;
+Package:                        'package' {this.IsStrictMode()}?;
+Protected:                      'protected' {this.IsStrictMode()}?;
+Static:                         'static' {this.IsStrictMode()}?;
+Yield:                          'yield' {this.IsStrictMode()}?;
 
 /// Identifier Names and Identifiers
 
@@ -500,10 +502,8 @@ fragment UnicodeLetter
     | [\u3105-\u312C]
     | [\u3131-\u318E]
     | [\u31A0-\u31B7]
-    | [\u3400]
-    | [\u4DB5]
-    | [\u4E00]
-    | [\u9FA5]
+    | [\u3400-\u4DBF]
+    | [\u4E00-\u9FFF]
     | [\uA000-\uA48C]
     | [\uAC00]
     | [\uD7A3]

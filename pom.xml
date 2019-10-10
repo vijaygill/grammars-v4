@@ -8,7 +8,7 @@
 	<name>ANTLR4 grammars</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<target.jvm>1.6</target.jvm>
+		<target.jvm>1.7</target.jvm>
 		<antlr.version>4.7.2</antlr.version>
 		<antlr4test-maven-plugin.version>1.11</antlr4test-maven-plugin.version>
 		<junit.version>4.12</junit.version>
@@ -67,7 +67,7 @@
 			<modules>
 				<module>abnf</module>
 				<module>agc</module>
-				<!-- <module>algol60</module> -->
+				<module>algol60</module>
 				<module>antlr3</module>
 				<module>antlr4</module>
 				<module>apex</module>
@@ -78,6 +78,7 @@
 				<module>asmMASM</module>
 				<module>asmZ80</module>
 				<module>asn</module>
+				<module>asn_3gpp</module>
 				<!-- AspectJ requires the Java grammar which is not on the AspectJ tree -->
 				<!-- <module>aspectj</module> -->
 				<module>atl</module>
@@ -91,7 +92,7 @@
 				<module>clf</module>
 				<module>clif</module>
 				<module>clojure</module>
-				<!-- <module>clu</module> -->
+				<module>clu</module>
 				<module>cmake</module>
 				<module>cobol85</module>
 				<module>cookie</module>
@@ -103,6 +104,7 @@
 				<module>css3</module>
 				<module>csv</module>
 				<module>cto</module>
+				<module>dart2</module>
 				<module>databank</module>
 				<module>dcm</module>
 				<module>dice</module>
@@ -118,12 +120,12 @@
 				<module>fusion-tables</module>
 				<module>gff3</module>
 				<module>gml</module>
-				<module>golang</module>
 				<module>graphql</module>
 				<module>graphstream-dgs</module>
 				<module>gtin</module>
 				<module>guido</module>
 				<module>html</module>
+				<module>http</module>
 				<module>hypertalk</module>
 				<module>icalendar</module>
 				<module>icon</module>
@@ -139,6 +141,7 @@
 				<!-- <module>javascript</module> TODO: required superClass support -->
 				<module>jpa</module>
 				<module>json</module>
+				<module>kirikiri-tjs</module>
 				<module>kotlin</module>
 				<module>kotlin-formal</module>
 				<module>kuka</module>
@@ -147,6 +150,7 @@
 				<module>less</module>
 				<module>logo</module>
 				<module>lolcode</module>
+				<module>lpc</module>
 				<module>lua</module>
 				<module>masm</module>
 				<module>matlab</module>
@@ -195,6 +199,7 @@
 				<module>r</module>
 				<module>rcs</module>
 				<module>redcode</module>
+				<module>rego</module>
 				<module>restructuredtext</module>
 				<module>rexx</module>
 				<module>rfc822-datetime</module>
@@ -229,6 +234,7 @@
 				<module>tinymud</module>
 				<module>tnsnames</module>
 				<module>tnt</module>
+				<module>toml</module>
 				<module>tsql</module>
 				<module>tsv</module>
 				<module>turtle</module>
@@ -238,15 +244,18 @@
 				<module>upnp</module>
 				<module>url</module>
 				<module>useragent</module>
+				<module>v</module>
 				<module>vb6</module>
 				<module>vba</module>
 				<module>verilog</module>
 				<module>vhdl</module>
+				<module>wat</module>
 				<module>wavefront</module>
 				<module>webidl</module>
 				<module>wkt</module>
 				<module>xml</module>
 				<module>xpath</module>
+				<module>xsd-regex</module>
 				<module>z</module>
 				<!-- testing repository -->
 				<!--<module>grammar-test</module> -->
